@@ -1,0 +1,4 @@
+<resources>
+
+    <style name="Theme.RA3" parent="Theme.AppCompat.DayNight.NoActionBar" />
+</resources>
