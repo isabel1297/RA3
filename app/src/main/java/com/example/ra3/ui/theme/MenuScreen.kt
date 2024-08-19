@@ -21,7 +21,7 @@ fun MenuScreen(navController: NavController) {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Button(onClick = { navController.navigate("canciones") }) {
-                Text("Lista de Canciones Románticas en Español")
+                Text("Lista de Canciones")
             }
             Spacer(modifier = Modifier.height(16.dp))
             Button(onClick = { navController.navigate("acercaDe") }) {
