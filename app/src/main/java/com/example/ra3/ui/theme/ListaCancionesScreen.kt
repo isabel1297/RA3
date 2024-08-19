@@ -4,6 +4,10 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Button
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.tv.material3.Text
 import com.example.ra3.R
 import com.example.ra3.model.Cancion
@@ -23,14 +27,24 @@ fun ListaCancionesScreen(onCancionSelected: (Cancion) -> Unit, onSalir: () -> Un
 
     LazyColumn {
         items(canciones) { cancion ->
-            Button(onClick = { onCancionSelected(cancion) }) {
+            Button(
+                onClick = { onCancionSelected(cancion) },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(8.dp)
+            ) {
                 Text(text = cancion.titulo)
             }
         }
 
         // Botón de salir
         item {
-            Button(onClick = { onSalir() }) {
+            Button(
+                onClick = { onSalir() },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(8.dp)
+            ) {
                 Text(text = "Salir")
             }
         }

@@ -1,5 +1,6 @@
+package com.example.ra3.ui.theme
+
 import androidx.compose.foundation.Image
-import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -8,9 +9,12 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.ui.res.painterResource
+import androidx.tv.material3.Button
+import androidx.tv.material3.ExperimentalTvMaterial3Api
 import androidx.tv.material3.Text
 import com.example.ra3.model.Cancion
 
+@OptIn(ExperimentalTvMaterial3Api::class)
 @Composable
 fun DetallesCancionScreen(cancion: Cancion, onSalir: () -> Unit) {
     Column(modifier = Modifier.padding(16.dp)) {
@@ -37,7 +41,6 @@ fun DetallesCancionScreen(cancion: Cancion, onSalir: () -> Unit) {
             text = "Autor: ${cancion.autor}",
             style = MaterialTheme.typography.bodyMedium
         )
-
         // Botón de salir
         Button(onClick = { onSalir() }) {
             Text(text = "Salir")
