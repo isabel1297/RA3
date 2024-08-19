@@ -30,17 +30,13 @@ class MainActivity : ComponentActivity() {
 
 @OptIn(ExperimentalTvMaterial3Api::class)
 @Composable
-fun AppNavigation() {
-    val navController = rememberNavController()
-    val equipoViewModel = EquipoViewModel() // Crear o inyectar tu ViewModel aquí
-
-    NavHost(navController = navController, startDestination = "menu") {
-        composable("menu") { MenuScreen(navController) }
-        composable("canciones") { ListaCancionesScreen(navController) }
-        composable("detalles/{cancionId}") { backStackEntry ->
-            DetallesCancionScreen(backStackEntry.arguments?.getInt("cancionId") ?: 0)
-        }
-        composable("acercaDe") { AcercaDeScreen(equipoViewModel) }
+fun DetallesCancionScreen(cancion: Cancion) {
+    Column(modifier = Modifier.padding(16.dp)) {
+        Text(text = "ID: ${cancion.id}")
+        Text(text = "Título: ${cancion.titulo}")
+        Image(painter = painterResource(id = cancion.imagen), contentDescription = null, modifier = Modifier.size(100.dp).padding(4.dp))
+        Text(text = "Descripción: ${cancion.descripcion}")
+        Text(text = "Autor: ${cancion.autor}")
     }
 }
 

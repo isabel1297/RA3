@@ -18,9 +18,10 @@ import com.example.ra3.R
 fun AcercaDeScreen(viewModel: EquipoViewModel) {
     val equipo = listOf(
         Miembro("Erika Isabel Arcos Gomez", "9°", "B", R.drawable.erika),
-        // Miembro("Juan Luis Sánchez", "10°", "C", R.drawable.juan) // Agrega la imagen de Juan Luis aquí
+        Miembro("Juan Luis Sánchez Gomez", "9°", "B", R.drawable.juanluis) // Agrega la imagen de Juan Luis aquí
         // Agrega otros miembros aquí
     )
+
 
     Column {
         Text("Materia: DESARROLLO PARA DISPOSITIVOS INTELIGENTES")
