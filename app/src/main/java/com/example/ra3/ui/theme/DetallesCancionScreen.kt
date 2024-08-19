@@ -13,22 +13,13 @@ import coil.compose.rememberImagePainter
 import com.example.ra3.model.Cancion
 
 @Composable
-fun DetallesCancionScreen(cancionId: Int) {
-    // Implementa la función para obtener datos de una API
-    val cancion: Cancion? = obtenerCancionPorId(cancionId)
-
-    cancion?.let {
-        Column(modifier = Modifier
-            .fillMaxSize()
-            .padding(16.dp)) {
-            Text(text = it.titulo)
-            Image(painter = rememberImagePainter(it.urlImagen), contentDescription = null)
-            Text(text = it.descripcion)
-            Text(text = it.campoAdicional1)
-            Text(text = it.campoAdicional2)
-        }
-    } ?: run {
-        Text(text = "Error al cargar la canción.")
+fun DetallesCancionScreen(cancion: Cancion) {
+    Column(modifier = Modifier.padding(16.dp)) {
+        Text(text = "ID: ${cancion.id}")
+        Text(text = "Título: ${cancion.titulo}")
+        Image(painter = painterResource(id = cancion.imagen), contentDescription = null, modifier = Modifier.size(100.dp).padding(4.dp))
+        Text(text = "Descripción: ${cancion.descripcion}")
+        Text(text = "Autor: ${cancion.autor}")
     }
 }
 
