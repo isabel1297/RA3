@@ -24,7 +24,7 @@ import androidx.tv.material3.Text
 import com.example.ra3.R
 
 @Composable
-fun AcercaDeScreen(viewModel: EquipoViewModel, navController: NavController) {
+fun AcercaDeScreen(navController: NavController) {
     val equipo = listOf(
         Miembro("Erika Isabel Arcos Gomez", "9°", "B", R.drawable.erika),
         Miembro("Juan Luis Sánchez Gomez", "9°", "B", R.drawable.juanluis)

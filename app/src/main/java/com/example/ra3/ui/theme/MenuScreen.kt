@@ -7,11 +7,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import androidx.navigation.NavHostController
 import androidx.tv.material3.ExperimentalTvMaterial3Api
 
 @OptIn(ExperimentalTvMaterial3Api::class)
 @Composable
-fun MenuScreen(navController: NavController) {
+fun MenuScreen(navController: NavHostController, onSalir: () -> Unit) {
     Surface(
         modifier = Modifier.fillMaxSize()
     ) {
